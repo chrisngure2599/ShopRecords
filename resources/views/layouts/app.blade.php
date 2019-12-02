@@ -11,6 +11,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/jquery.js') }}" ></script>
+    <script src="{{ asset('js/datatables.js') }}" ></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,6 +21,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/w3.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/datatables.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -33,6 +36,9 @@
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 @endguest
+                <a class="navbar-item  " href="{{ url('/users') }}">
+                    User management
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -85,3 +91,4 @@
     </div>
 </body>
 </html>
+
