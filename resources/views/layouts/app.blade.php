@@ -35,7 +35,7 @@
                 <a class="navbar-brand  " href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-a class="navbar-item  " href="{{ url('/users') }}">
+                <a class="navbar-item  " href="{{ url('/users') }}">
                     User management
                 </a>
                 @endguest
