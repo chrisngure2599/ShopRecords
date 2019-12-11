@@ -45,6 +45,9 @@
                 <a class="navbar-item  btn w3-hoverable" href="{{ url('/sales') }}">
                     Sales
                 </a>
+                <a class="navbar-item  btn w3-hoverable" href="{{ url('/purchases') }}">
+                    Purchases
+                </a>
                 @endguest
                 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

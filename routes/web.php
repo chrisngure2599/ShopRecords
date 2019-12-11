@@ -29,6 +29,7 @@ Route::post('shopitems','ShopItemController@store')->name('shopitemscreate');
 Route::get('sales','RecordsController@index');
 Route::get('sales/add','RecordsController@create');
 Route::post('sales/add','RecordsController@store');
+Route::resource('purchases','PurchasesController');
 
 
 
