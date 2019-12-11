@@ -20,7 +20,7 @@
 		</div>
 		<div class="form-group" >
 			<label>Quantity</label>
-			<input type="number" name="quantity" id="price" class="w3-input" >
+			<input type="number" name="quantity" id="quantity" class="w3-input" >
 			@error('quantity')
 			 <div class="alert alert-danger" >
 			 	{{ $message }}
@@ -29,7 +29,7 @@
 		</div>
 		<div class="w3-input">
 			<label>Price</label>
-			<input type="number" value="1000" readonly class="w3-input disabled" name="price" id="price">
+			<input type="number" value="0" readonly class="w3-input disabled" name="price" id="price">
 			@error('price')
 			 <div class="alert alert-danger" >
 			 	{{ $message }}
@@ -42,8 +42,20 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("body").on('change', '#shopitem', function(event) {
-		
+			var price = $(this).children("option:selected").attr('price');
+			var qty = $("#quantity").val();
+			var total=price*qty;
+			$("#price").val(total)
 		});
+		$(document).ready(function() {
+		$("body").on('change keydown', '#quantity', function(event) {
+			var price = $("#shopitem").children("option:selected").attr('price');
+			var qty = $("#quantity").val();
+			var total=price*qty;
+			$("#price").val(total)
+
+		});
+	});
 	});
 </script>
 @endsection
