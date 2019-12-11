@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -15,8 +14,10 @@ class RecordsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('sales.index') ;
+    {   
+        $sales= new SalesRecords;
+        $sales=$sales->all();
+        return view('sales.index')->with('sales',$sales) ;
     }
 
     /**
