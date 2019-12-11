@@ -15,8 +15,8 @@
     <script src="{{ asset('js/datatables.js') }}" ></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+{{--     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
 
     <!-- Styles -->
     <link href="{{ asset('css/w3.css') }}" rel="stylesheet">
@@ -25,18 +25,25 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md  bg-gray shadow-sm">
+        <nav class="navbar navbar-expand-md  bg-black shadow-sm">
             <div class="container">
                 @guest
                 <a class="navbar-brand  " href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 @else
-                <a class="navbar-brand  " href="{{ url('/home') }}">
+                <a class="navbar-brand  btn w3-hoverable" href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <a class="navbar-item  " href="{{ url('/users') }}">
+                <a class="navbar-item  btn w3-hoverable" href="{{ url('/users') }}">
                     User management
+                </a>
+                &nbsp;
+                <a class="navbar-item  btn w3-hoverable" href="{{ url('/shopitems') }}">
+                    ShopItems
+                </a>
+                <a class="navbar-item  btn w3-hoverable" href="{{ url('/sales') }}">
+                    Sales
                 </a>
                 @endguest
                 
