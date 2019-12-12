@@ -15,7 +15,10 @@ class PurchasesController extends Controller
      */
     public function index()
     {
-        return view('purchases.index');
+        //Fetching purchases
+        $purchases=new Purchases;
+        $purchases= $purchases->all();
+        return view('purchases.index')->with('purchases',$purchases);
     }
 
     /**
@@ -39,7 +42,15 @@ class PurchasesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validation
+        $request->validate([
+            'shop_item_id'=>'required',
+            'quantity'=>'required|numeric|min:1',
+            'description'=>'nullable|string'
+        ]);
+        $purchase=new Purchases;
+        $purchase= $purchase->create($request->all());
+        return redirect($to = '/purchases');
     }
 
     /**
